@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Board</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://png.pngtree.com/background/20220730/original/pngtree-tiny-business-analysts-discussing-ideas-at-laptop-with-data-picture-image_1885422.jpg');
+            background-size: cover;
+            width:100%;
+            height:100%;
+            background-repeat: no-repeat;
+        }
+
+        .btnstyle {
+            background-color: yellow;
+            color: black;
+            padding: 20px;
+            border-radius: 8px;
+            border: none;
+            font-size: 20px;
+            margin: 10px;
+            cursor: pointer;
+            text-align: left;
+            display: block;
+            width: 20%;
+        }
+
+        .btnstyle:hover {
+            color: aqua;
+        }
+
+        .student {
+            margin-top: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="student">
+        <div class="container">
+            <div class="row">
+              
+                    <h1 style="color:aliceblue">DISCUSSION BOARD</h1>
+               
+            </div>
+        </div>
+    </div>
+    <div class="text-start">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <a href="{{url_for('register')}}" class="btn btnstyle">Register to see posts</a>
+                    <a href="{{url_for('login')}}" class="btn btnstyle">Login to see post</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <a href="{{url_for('aregister')}}" class="btn btnstyle">Register to add post</a>
+                    <a href="{{url_for('alogin')}}" class="btn btnstyle"> Login to add post</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

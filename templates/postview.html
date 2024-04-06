@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add note</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        body {
+            background-color: rgb(228, 228, 211);
+        }
+        .btnstyle {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .image {
+            background-image: url('https://static.vecteezy.com/system/resources/thumbnails/001/790/394/original/seamless-loopable-of-raindrops-on-blurred-green-background-free-video.jpg');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="image">
+    <div class="container">
+        <div class="form-group">
+            <a href="{{url_for('addpost')}}" class="btn btn-info ml-auto add-button">add post</a>
+
+            <label for="date"><b style="color: azure;">TITLE</b></label>
+            <input type="text" class="form-control" id="date" name="title" value='{{data[2]}}' readonly>
+        </div>
+        <div class="form-group">
+            <label for="diary"><b style="color: azure;">TOPIC</b></label>
+            <textarea class="form-control" id="diary" rows="9" style="width:100%" name="content" readonly>{{data[3]}}</textarea>
+        </div>
+        <hr> <!-- Add a horizontal line to separate the content and comments -->
+
+        <hr> <!-- Add a horizontal line to separate comments -->
+        
+
+       
+    </div>
+
+    <!-- Add Bootstrap JS (Optional, if needed) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

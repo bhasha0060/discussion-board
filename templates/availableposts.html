@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add note</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        body {
+            background-color: rgb(228, 228, 211);
+        }
+        .btnstyle {
+            background-color: blue;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .image {
+            background-image: url('https://cdn.elearningindustry.com/wp-content/uploads/2015/06/online-discussions-netiquette-tips-e1462445595547.jpg');
+            background-size: cover;
+        }
+        .card {
+            margin-bottom: 20px;
+            border-radius: 15px;
+            background-color: transparent;
+            width: 90%;
+            max-width: 500px;
+           
+            margin: 0 auto;
+        }
+        .card-header {
+            background-color: white;
+            border-bottom: none;
+            padding: 10px 20px;
+        }
+        .card-body {
+            background-color: white;
+            padding: 10px;
+        }
+        .card-title {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .card-text {
+            font-size: 20px;
+        }
+        .add-button {
+            margin-top: 5px;
+        }
+        .hr-line {
+            border-top: 1px solid #ccc;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .text-end{
+            /* display: block; */
+            margin: 0 auto;
+
+            align-items: center;
+            position: relative;
+            right: 10%;
+            
+        }
+        .container{
+            margin-top: 6px;
+        }
+        
+        /* .star {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: gold;
+} */
+    </style>
+</head>
+<body class="image">
+    <div class="col-4 text-end">
+        <a href="{{ url_for('index') }}" class="btn btn-primary add-button">Add Post</a>
+    </div>
+    {% if data %}
+    <div class="container">
+        {% for item in data %}
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-8">
+                        <h5 class="card-title">{{ item[1] }}</h5>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{ item[2] }}</p>
+                <hr class="hr-line">
+                <a href="{{ url_for('comment', pid=item[0]) }}" class="btn btn-primary add-button">Post/view 🤦‍♂️ Comment</a>  
+          
+        {% endfor %}
+    </div>
+    {% endif %}
+    <a href="{{ url_for('logout') }}" class="btn btn-primary add-button">Logout 🏃‍♂️</a>
+    
+    <!-- Add Bootstrap JS (Optional, if needed) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

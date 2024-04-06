@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        th:hover {
+            background-color: #e0e0e0;
+        }
+
+        td:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>post,message,reply</title>
+</head>
+<body>
+    <div class="card">
+        <table>
+            <tr>
+                <th>comment</th>
+                <th>comment date</th>
+                <th>reply</th>
+            </tr>
+            {% if sender%}
+                {% for i in sender %}
+                <tr>
+                    <td>
+                        {{ i[3] }}
+                    </td>
+                    <td> {{ i[4] }}</td>
+                    <td>
+                        <label>
+                            {{i[5]}}
+                            <!-- <form method="POST" action="{{url_for('reply',id1=i[0])}}">
+                                <input type="text" placeholder="enter your reply" name="reply">
+                                <button>submit</button>  
+                            </form> -->
+                        </label>
+                    </td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td>
+                        <!-- <form method="POST" action="{{url_for('comment',pid=id)}}">
+                            <input type="text" placeholder="enter your comment" name="message">
+                            <button>submit</button>
+                        </form> -->
+                    </td>
+                </tr>
+            {% endif %}
+        </table>
+    </div>
+    <form method="POST" action="{{url_for('comment',pid=id)}}">
+        <input type="text" placeholder="enter your comment" name="message">
+        <button>submit</button>
+     </form>
+</body>
+</html>

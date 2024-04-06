@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://media.istockphoto.com/id/1397823749/photo/person-hand-typing-on-keyboard-with-login-and-password-on-screen-display-cyber-security.webp?b=1&s=170667a&w=0&k=20&c=prgc3zrfEjWStIP9ntGCwJWQ4l0idpN-pZrunlvW26U=');
+            background-size: cover;
+        }
+  
+        
+        b {
+            color: rgb(14, 14, 14);
+        }
+
+        label {
+            color: rgb(195, 30, 30);
+        }
+
+        .form-container {
+            background-color: rgba(190, 184, 184, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 5%;
+        }
+        .btn{
+            background-color: #ffb6c1;
+            color: black;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            margin: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            
+        }
+
+        .btnstyle {
+            background-color: #ffb6c1;
+            color: black;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            margin: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        /* Apply hovering effect to buttons */
+        .btnstyle:hover {
+            background-color: #e60c26;
+            color: rgb(181, 238, 159);
+        }
+
+        /* Change color of placeholder on input focus */
+        input:focus::placeholder {
+            color: #26c1cc;
+        }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li><b style="color: azure;">{{ message }}</b></li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 style="color:rgb(8, 8, 8);"> Register here</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-container">
+                    <form method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label"><b>Name:</b></label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label"><b>Password:</b></label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label" placeholder="Enter your mail id"><b>Email:</b></label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <button type="submit" class="btn btnstyle">Register</button>
+                        <button class="btn">
+                        <a href="{{url_for('login')}}">Already have an account?</a></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

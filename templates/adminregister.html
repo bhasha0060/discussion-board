@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin Registration</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-image: url('https://i.pinimg.com/564x/4b/fc/65/4bfc655d8840cfc67b35567d767cd09f.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+
+
+        }
+        b{
+            color: white
+        }
+        .bdr{
+           
+            background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20190222/ourmid/pngtree-blue-sky-white-clouds-paper-plane-background-material-cloudspaper-planecloudon-the-image_50008.jpg   ');
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            border: 2px solid black;
+            border-color: green ;
+            padding: 5%;
+            width: 300px;
+            display: flex;
+            border-radius: 20%;
+            position: absolute;
+            right: 35%;
+          
+            
+        }
+        label {
+            color: white;
+            margin: 10px;
+        }
+        .btnstyle {
+            background-color: skyblue;
+            color:black;
+            padding:10px;
+            border-radius: 8px;
+            border:none;
+            margin: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .alreadybtn{
+            background-color: skyblue;
+            color:black;
+            padding:10px;
+            border-radius: 8px;
+            border:none;
+            margin-left: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        input{
+            margin-left: 10px;
+        }
+        /* .adreg{
+            border-color: rgb(0, 109, 128);
+            border-radius: 2%;
+            background-color: blue;
+           
+        } */
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <li><b>{{ message }}</li></b>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+
+<body>
+    <center>
+        
+    <h1 style="color:white">register to add post 🤷‍♂️</h1>
+    <div style="margin-left:42%;; margin-top:2%" class="bdr">
+        
+    <form method="POST">
+        
+        <label>Name:</label>
+        <p><input placeholder="Enter Name" type="text" name="name" required/></p>
+        
+        <label>Password:</label>
+        <p><input placeholder="Enter password 🙈" type="password" name="password" required/></p>
+        
+        <label>email</label>
+        <p><input type="email" placeholder="Enter your mail id " name="email" required/></p>
+        <button class="btnstyle">Register</button>
+        <button class="alreadybtn">
+        <a href="{{url_for('alogin')}}" target="_blank">Already have an account?</a></button>
+    
+    </form>
+</div>
+
+</body>
+</html>
